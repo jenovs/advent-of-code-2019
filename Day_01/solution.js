@@ -1,7 +1,11 @@
 // @ts-check
 import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
 
-const input = readFileSync('./input.txt', 'utf8')
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const input = readFileSync(resolve(__dirname, './input.txt'), 'utf8')
   .split('\n')
   .map(Number);
 
